@@ -6,14 +6,14 @@ import org.springframework.ui.Model;
 
 @Controller
 public class BookController {
-    private BookRepository bookRespository;
+    private BookRepository bookRepository;
 
-    public BookController(BookRepository bookRespository) {
-        this.bookRespository = bookRespository;
+    public BookController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     public String getBooks(Model model) {
-        model.addAttribute("books", bookRespository.findAll());
+        model.addAttribute("books", bookRepository.findAll());
         return "books";
     }
 }
